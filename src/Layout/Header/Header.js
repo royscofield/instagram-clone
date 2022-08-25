@@ -1,7 +1,14 @@
 import React from "react";
 import "./Header.css";
+import ProfilePic from '../../assets/IMG_0925.JPG'
 
-import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost, FindPeople, ActivityFeed } from "../../components/Icons/Index";
+import Tippy from "@tippyjs/react";
+import 'tippy.js/animations/scale-subtle.css';
+
+import { Wrapper } from "../../components/Wrapper";
+
+
+import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost, FindPeople, ActivityFeed, Following, Favourites } from "../../components/Icons/Index";
 
 function Header() {
     return (
@@ -9,14 +16,41 @@ function Header() {
             <div className="logo">
                 <div className="instaLogo">
                     {/* logo instagram */}
-                    <InstagramLogo />
+                    <a href="/">
+                        <InstagramLogo />
+                    </a>
                     
                 </div>
-                <div className="dropdownIcon">
                     {/* dropdown svg */}
-                    <DropdownIcon />
+                    <Tippy
+                        content = {
+                            <Wrapper>
+                                <div className="dropdownTippy">
+                                    <div className="followingIcon">
+                                        <Following />
+                                        <p>Following</p>
+                                    </div>
+                                    {/* <br/> */}
+                                    <div className="favaouritesIcon">
+                                        <Favourites />
+                                        <p>Favourites</p>
+                                    </div>
+                                </div>
+                             </Wrapper>
+                        }
+                        animation="fade"
+                        arrow={true}
+                        theme="light-border"
+                        trigger="click"
+                        interactive="true"
+                        placement='bottom-end'
+                        appendTo="parent"   
+                    >
+                        <div className="dropdownIcon">
+                            <DropdownIcon />
+                        </div>
+                    </Tippy>
                     
-                </div>
             </div>
             <div className="search">
                 <div className="searchCombo">
@@ -45,7 +79,7 @@ function Header() {
                     <ActivityFeed />
                 </div>
                 <div className="profileIcon">
-                    
+                    <img alt="profile-pic" src={ProfilePic} className='profilePic'/>
                 </div>
             </div>
         </div>
