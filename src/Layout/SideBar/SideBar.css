@@ -1,3 +1,5 @@
+
+
 /* header Sidebar */
 
 .headerSidebar
@@ -19,7 +21,7 @@
 {
     /* background: #333; */
     position: relative;
-    top: -1rem;
+    top: -1.25rem;
     margin-left: 1rem;
 }
 
@@ -27,7 +29,7 @@
 {
     position: absolute;
     right: 251.5px;
-    margin-top: 1rem;
+    margin-top: 0.65rem;
 }
 
 .switchAccount a{
@@ -36,8 +38,72 @@
 
 /* main sidebar */
 
+
 .suggestion
 {
     display: flex;
     justify-content: space-between;
+}
+
+.items
+{
+    display: flex;
+    font-size: 13px;
+}
+
+.account_User_Logo
+{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* footer sidebar */
+
+.sidebar_Footer
+{
+    display: flex;
+    margin-right: 0;
+    flex-direction: column;
+}
+
+.link_sidebar
+{
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 0.05rem;
+    color: rgb(207, 207, 207);
+}
+
+.link_sidebar_start
+{
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(207, 207, 207);
+}
+
+.link_sidebar_start::after
+{
+    content: '\00B7';
+    margin: 0.25em 0.25em;
+}
+
+.link_sidebar::after
+{
+    content: '\00B7';
+    margin: 0.25em 0.25em;
+}
+
+.link_sidebar_end
+{
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(207, 207, 207);
+}
+
+.copyright
+{
+    font-size: 13px;
+    color: rgb(207, 207, 207);
+    margin-top: 1rem;
 }
