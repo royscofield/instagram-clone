@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Layout/Header/Header';
 import SideBar from './Layout/SideBar/SideBar';
+import Content from './Layout/Content/Content';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         </div>
         <div className='main'>
             <div className='content'>
-                this is content
+                <Content />
             </div>
             <div className='sidebar'>
                 <SideBar />

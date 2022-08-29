@@ -1,4 +1,7 @@
-
+.containerSidebar
+{
+    margin-top: 1.2rem;
+}
 
 /* header Sidebar */
 
@@ -75,6 +78,17 @@
     color: rgb(207, 207, 207);
 }
 
+.link_sidebar::after
+{
+    content: '\00B7';
+    margin: 0.25em 0.25em;
+}
+
+.link_sidebar:hover
+{
+    text-decoration: underline;
+}
+
 .link_sidebar_start
 {
     text-decoration: none;
@@ -88,17 +102,22 @@
     margin: 0.25em 0.25em;
 }
 
-.link_sidebar::after
+.link_sidebar_start:hover
 {
-    content: '\00B7';
-    margin: 0.25em 0.25em;
+    text-decoration: underline;
 }
+
 
 .link_sidebar_end
 {
     text-decoration: none;
     font-size: 13px;
     color: rgb(207, 207, 207);
+}
+
+.link_sidebar_end:hover
+{
+    text-decoration: underline;
 }
 
 .copyright

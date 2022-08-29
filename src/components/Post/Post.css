@@ -1,0 +1,87 @@
+.post_container
+{
+    height: 839px;
+    border-radius: 8px;
+    border: 1px solid rgb(219, 219, 219);
+}
+
+/* header post */
+.post_header
+{
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_avatar
+{
+    display: flex;
+    cursor: pointer;
+}
+
+.post_header_pic
+{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.circle_canvas
+{
+    border: 2px solid rgb(211, 0, 197);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0.5rem 0 0 0.75rem;
+    display: flex;
+}
+
+.post_account_name
+{
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.post_options
+{
+    margin: 1rem 1rem 0 0 ;
+    cursor: pointer;
+}
+
+/* pic */
+
+.post_pic
+{
+    margin-top: 0.5rem;
+}
+
+.post_content_pic
+{
+    width: 470px;
+    height: 588px;
+}
+
+/* actions */
+
+.post_actions
+{
+    margin:0.7rem 0 0 0 ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_left_actions
+{
+    display: flex;
+}
+
+.post_actions_icon
+{
+    margin: 0 0 0 1rem;
+}
+
+.post_right_actions
+{
+    margin: 0 0.5rem 0 0;
+}

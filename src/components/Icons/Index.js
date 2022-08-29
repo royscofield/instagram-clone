@@ -260,3 +260,94 @@ export const Favourites = () => (
         <path d="M18.18 22.51a.99.99 0 01-.513-.142L12 18.975l-5.667 3.393a1 1 0 01-1.492-1.062l1.37-6.544-4.876-4.347a.999.999 0 01.536-1.737l6.554-.855 2.668-5.755a1 1 0 011.814 0l2.668 5.755 6.554.855a.999.999 0 01.536 1.737l-4.876 4.347 1.37 6.544a1 1 0 01-.978 1.205zM12 16.81a1 1 0 01.514.142l4.22 2.528-1.021-4.873a.998.998 0 01.313-.952l3.676-3.276-4.932-.644a1 1 0 01-.778-.57L12 4.867l-1.992 4.297a1 1 0 01-.779.57l-4.931.644 3.676 3.276a.998.998 0 01.313.951l-1.02 4.873 4.22-2.527A1 1 0 0112 16.81z"></path>
     </svg>
 );
+
+export const Options = () => (
+    <svg
+        aria-label="More Options"
+        class="_ab6-"
+        color="#262626"
+        fill="#262626"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+    >
+        <circle cx="12" cy="12" r="1.5"></circle>
+        <circle cx="6" cy="12" r="1.5"></circle>
+        <circle cx="18" cy="12" r="1.5"></circle>
+    </svg>
+);
+
+export const Comments = () => (
+    <svg
+        aria-label="Comment"
+        class="_ab6-"
+        color="#262626"
+        fill="#262626"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+    >
+        <path
+            d="M20.656 17.008a9.993 9.993 0 10-3.59 3.615L22 22z"
+            fill="none"
+            stroke="currentColor"
+            stroke-linejoin="round"
+            stroke-width="2"
+        ></path>
+    </svg>
+);
+
+export const Share = () => (
+    <svg
+        aria-label="Share Post"
+        class="_ab6-"
+        color="#262626"
+        fill="#262626"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+    >
+        <line
+            fill="none"
+            stroke="currentColor"
+            stroke-linejoin="round"
+            stroke-width="2"
+            x1="22"
+            x2="9.218"
+            y1="3"
+            y2="10.083"
+        ></line>
+        <polygon
+            fill="none"
+            points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334"
+            stroke="currentColor"
+            stroke-linejoin="round"
+            stroke-width="2"
+        ></polygon>
+    </svg>
+);
+
+export const Bookmark = () => (
+    <svg
+        aria-label="Save"
+        class="_ab6-"
+        color="#262626"
+        fill="#262626"
+        height="24"
+        role="img"
+        viewBox="0 0 24 24"
+        width="24"
+    >
+        <polygon
+            fill="none"
+            points="20 21 12 13.44 4 21 4 3 20 3 20 21"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+        ></polygon>
+    </svg>
+);

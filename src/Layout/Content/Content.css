@@ -1,0 +1,19 @@
+
+
+/* content header */
+
+.content_header
+{
+    width: 470px;
+    height: 119px;
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(219, 219, 219);
+}
+
+/* content post */
+
+.content_post
+{
+    margin-top: 1rem;
+}
