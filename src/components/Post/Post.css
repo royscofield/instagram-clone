@@ -1,8 +1,12 @@
-.post_container
+
+
+.main_post
 {
     height: 839px;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     border: 1px solid rgb(219, 219, 219);
+    border-bottom: none;
 }
 
 /* header post */
@@ -79,9 +83,85 @@
 .post_actions_icon
 {
     margin: 0 0 0 1rem;
+    cursor: pointer;
 }
 
 .post_right_actions
 {
     margin: 0 0.5rem 0 0;
+    cursor: pointer;
+}
+
+/* footer */
+
+.post_footer
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.post_like
+{
+    font-weight: bold;
+    margin: 0 0 0 1rem;
+}
+
+.post_details
+{
+    margin: 0 0 0 1rem;
+    font-weight: 350;
+}
+
+.post_view_comments
+{
+    margin: 0 0 0 1rem;
+    cursor: pointer;
+}
+
+/* comments */
+
+.post_comments_left
+{
+    display: flex;
+}
+
+.post_comments
+{
+    height: 49px;
+    border: 1px solid rgb(219, 219, 219);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emotions
+{
+    margin: 12.5px 0 12.5px 1rem;
+    cursor: pointer;
+}
+
+.post_input_comment
+{
+    margin: 12.5px 0 12.5px 1rem;
+}
+
+.post_add_comment
+{
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-family: 'Outfit';
+}
+
+.post_add_comment::placeholder
+{
+    font-size: 15px;
+}
+
+.post_comments_right
+{
+    font-weight: bold;
+    color: rgb(177, 207, 233);
+    margin: 0 1rem 0 0;
 }
