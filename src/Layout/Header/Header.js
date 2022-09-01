@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import ProfilePic from '../../assets/IMG_0925.JPG'
 
 import Tippy from "@tippyjs/react";
 import 'tippy.js/animations/scale-subtle.css';
 
+import Popup from "reactjs-popup";
+
 import { Wrapper } from "../../components/Wrapper";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
-import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost, FindPeople, ActivityFeed, Following, Favourites } from "../../components/Icons/Index";
-
+import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost, FindPeople, ActivityFeed, Following, Favourites, Media, ProfileIcon, SavedIcon, SettingsIcon, ThemeIcon, SwitchAccountIcon} from "../../components/Icons/Index";
 function Header() {
+
+    const [clickSearch, setClickSearch] = useState(false)
+
+    const handleClickSearchBox = () =>
+    {
+        setClickSearch(true)
+    }
+
     return (
-        <div className="container">
+        <div className="container" id="blur">
             <div className="logo">
                 <div className="instaLogo">
                     {/* logo instagram */}
@@ -52,25 +63,64 @@ function Header() {
                     </Tippy>
                     
             </div>
+            {/* search */}
             <div className="search">
-                <div className="searchCombo">
-                    <div className="searchIcon">
-                        <SearchIcon />
-                    </div>
-                    <div className="searchBox">
-                        <input type={'text'} placeholder={'Search'} className={'searchInput'}/>
-                    </div>
-                </div>
+                {
+                    clickSearch ? (
+                        <div className="searchCombo">
+                            <div className="searchBox">
+                                <input type={'text'} placeholder={'Search'} className={'searchInput'} onClick={handleClickSearchBox}/>
+                            </div>
+                            <button className="clear_search">
+                                <FontAwesomeIcon icon={faCircleXmark}/>
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="searchCombo">
+                            <div className="searchIcon">
+                                <SearchIcon />
+                            </div>
+                            <div className="searchBox">
+                                <input type={'text'} placeholder={'Search'} className={'searchInput'} />
+                            </div>
+                        </div>
+                    )
+                }
+                
             </div>
+            {/* navigation */}
             <div className="navigation">
                 <div className="icon">
-                    <HomeIcon />
+                    <a href="/"><HomeIcon /></a>
                 </div>
                 <div className="icon">
                     <MessageIcon />
                 </div>
                 <div className="icon">
-                    <NewPost />
+                    <Popup
+                        trigger={<button className="popup_btn"><NewPost /></button>}
+                        modal
+                        nested
+                    >
+                        {close => (
+                            <div className="popup_modal">
+                                <div className="popup_header"> Create new post </div>
+                                <div className="popup_content">
+                                    <div className="popup_mediaSVG">
+                                        <Media />
+                                    </div>
+                                    <div className="popup_para">
+                                        <p>Drag photos and videos here</p>
+                                    </div>
+                                    <div className="popup_selectFile">
+                                        <input type={'button'} value='Select From Computer' className="popup_selectFile_btn" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        )}
+                </Popup>
+                    
                 </div>
                 <div className="icon">
                     <FindPeople />
@@ -79,7 +129,51 @@ function Header() {
                     <ActivityFeed />
                 </div>
                 <div className="profileIcon">
-                    <img alt="profile-pic" src={ProfilePic} className='profilePic'/>
+                    <Tippy
+                        content = {
+                            <Wrapper>
+                                <div className="menu_container">
+                                    <div className="menu_icon">
+                                        <ProfileIcon />
+                                        <p className="menu_icon_p">Profile</p>
+                                    </div>
+
+                                    <div className="menu_icon">
+                                        <SavedIcon />
+                                        <p className="menu_icon_p">Saved</p>
+                                    </div>
+
+                                    <div className="menu_icon">
+                                        <ThemeIcon />
+                                        <p className="menu_icon_p">Switch Apprearance</p>
+                                    </div>
+
+                                    <div className="menu_icon">
+                                        <SettingsIcon />
+                                        <p className="menu_icon_p">Settings</p>
+                                    </div>
+
+                                    <div className="menu_icon">
+                                        <SwitchAccountIcon />
+                                        <p className="menu_icon_p">Switch Account</p>
+                                    </div>
+                                    <div className="menu_logout">
+                                        <p className="menu_logout_txt">Log out</p>
+                                    </div>
+                                </div>
+                            </Wrapper>
+                        }
+                        animation="fade"
+                        arrow={true}
+                        theme="light-border"
+                        trigger="click"
+                        interactive="true"
+                        placement='bottom-end'
+                        appendTo="parent"
+                        offset={[12, 8]}
+                        >
+                            <img alt="profile-pic" src={ProfilePic} className='profilePic'/>
+                        </Tippy>
                 </div>
             </div>
         </div>

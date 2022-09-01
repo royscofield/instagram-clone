@@ -36,7 +36,7 @@
     vertical-align: middle;
     white-space: nowrap;
     vertical-align: middle;  
-    width: 300px; 
+    width: 300px;
 }
 
 .searchCombo .searchIcon
@@ -47,9 +47,22 @@
     margin-left: 0.5rem;
 }
 
+.clear_search
+{
+    margin-top: 0.6rem;
+    border: none;
+    background: transparent;
+    color: rgb(200, 200, 200);
+    position: absolute;
+    left: 43rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 .searchInput
 {
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 8px;
     border: none;
     width: 232px;
@@ -102,11 +115,9 @@ input:focus-within
 {
     font-family: 'Outfit';
     position: relative;
-    /* margin-left: 0.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* flex: 1; */
 }
 
 .followingIcon
@@ -114,7 +125,6 @@ input:focus-within
     padding-top: 0.5rem;
     display: flex;
     justify-content: space-around;
-    /* flex: 1; */
     cursor: pointer;
 
 }
@@ -145,4 +155,113 @@ input:focus-within
 .favaouritesIcon p
 {
     margin-top: 0;
+}
+
+/* pop up */
+
+
+.popup_modal {
+    font-size: 12px;
+    height: 618px;
+    width: 576px;
+    justify-content: center;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(11, 10, 10, 0.16);
+}
+
+
+.popup_header {
+    border-bottom: 1px solid rgb(219, 219, 219);
+    font-size: 18px;
+    text-align: center;
+    padding: 0.5rem 0;
+    font-weight: 450;
+}
+
+
+.popup_content {
+    width: 100%;
+    padding: 10px 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup_para
+{
+    font-size: 20px;
+}
+
+
+
+.popup_selectFile_btn
+{
+    font-size: 15px;
+    background: rgb(0, 149, 246);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 450;
+    padding: 0.5rem 1rem;
+}
+
+
+.popup_btn
+{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* tippy menu */
+
+.menu_container
+{
+    width: 230px;
+    height: 246px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.menu_icon
+{
+    display: flex;
+    width: 230px;
+    height: 41px;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+
+.menu_icon:hover
+{
+    background: rgb(250, 250, 250);
+}
+
+.menu_icon_p
+{
+    padding-left: 0.7rem;
+}
+
+.menu_logout
+{
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    padding-left: 0.5rem;
+    width: 230px;
+    height: 41px;
+    border-top: 1px solid rgb(219, 219, 219);
+}
+
+.menu_logout:hover 
+{
+    background: rgb(250, 250, 250);
+    border-radius: 8px;
 }

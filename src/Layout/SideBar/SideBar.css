@@ -61,6 +61,11 @@
     border-radius: 50%;
 }
 
+.follow
+{
+    cursor: pointer;
+}
+
 /* footer sidebar */
 
 .sidebar_Footer

@@ -3,6 +3,13 @@ import LogoUser from '../../assets/IMG_0925.JPG'
 
 function SideBar ()
 {
+
+    const handleClickSwitch = () =>
+    {
+        var following = document.getElementsByClassName('follow')
+        following[0].innerHTML='Following'
+    }
+
     return(
         <div className='containerSidebar'>
             {/* header sidebar */}
@@ -41,7 +48,7 @@ function SideBar ()
                     </div>
 
                     <div className='switchAccount'>
-                        <a href='/' style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</a>
+                        <p className='follow' style={{color:'rgb(46,159,247)', fontWeight:'bold'}} onClick={handleClickSwitch}>Follow</p>
                     </div>
                 </div>
 
@@ -56,7 +63,7 @@ function SideBar ()
                     </div>
 
                     <div className='switchAccount'>
-                        <a href='/' style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</a>
+                        <p  style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</p>
                     </div>
                 </div>
 
@@ -71,7 +78,7 @@ function SideBar ()
                     </div>
 
                     <div className='switchAccount'>
-                        <a href='/' style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</a>
+                        <p style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</p>
                     </div>
                 </div>
 
@@ -86,7 +93,7 @@ function SideBar ()
                     </div>
 
                     <div className='switchAccount'>
-                        <a href='/' style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</a>
+                        <p style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</p>
                     </div>
                 </div>
 
@@ -101,7 +108,7 @@ function SideBar ()
                     </div>
 
                     <div className='switchAccount'>
-                        <a href='/' style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</a>
+                        <p style={{color:'rgb(46,159,247)', fontWeight:'bold'}}>Follow</p>
                     </div>
                 </div>
 
