@@ -5,6 +5,8 @@ import ProfilePic from '../../assets/IMG_0925.JPG'
 import Tippy from "@tippyjs/react";
 import 'tippy.js/animations/scale-subtle.css';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Popup from "reactjs-popup";
 
 import { Wrapper } from "../../components/Wrapper";
@@ -13,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost, FindPeople, ActivityFeed, Following, Favourites, Media, ProfileIcon, SavedIcon, SettingsIcon, ThemeIcon, SwitchAccountIcon} from "../../components/Icons/Index";
+import Profile from "../../Pages/Profile/Profile";
 function Header() {
 
     const [clickSearch, setClickSearch] = useState(false)
@@ -22,8 +25,17 @@ function Header() {
         setClickSearch(true)
     }
 
+    const handleProfile = () =>
+    {
+        <BrowserRouter>
+            <Routes>
+                <Route path="profile" element={<Profile/>}></Route>
+            </Routes>
+        </BrowserRouter>
+    }
+
     return (
-        <div className="container" id="blur">
+        <div className="container">
             <div className="logo">
                 <div className="instaLogo">
                     {/* logo instagram */}
@@ -133,7 +145,7 @@ function Header() {
                         content = {
                             <Wrapper>
                                 <div className="menu_container">
-                                    <div className="menu_icon">
+                                    <div className="menu_icon_profile" onClick={handleProfile}>
                                         <ProfileIcon />
                                         <p className="menu_icon_p">Profile</p>
                                     </div>
@@ -163,14 +175,13 @@ function Header() {
                                 </div>
                             </Wrapper>
                         }
-                        animation="fade"
+                        // animation="fade"
                         arrow={true}
                         theme="light-border"
                         trigger="click"
                         interactive="true"
                         placement='bottom-end'
                         appendTo="parent"
-                        offset={[12, 8]}
                         >
                             <img alt="profile-pic" src={ProfilePic} className='profilePic'/>
                         </Tippy>

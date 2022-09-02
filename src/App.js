@@ -1,23 +1,40 @@
 import './App.css';
-import Header from './Layout/Header/Header';
-import SideBar from './Layout/SideBar/SideBar';
-import Content from './Layout/Content/Content';
+import DefaulLayout from './Layout/DefaulLayout/DefaulLayout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { publicRoutes } from './routes/route'
+import { Fragment } from 'react'
 
 function App() {
   return (
-    <div className="app">
-        <div className='header'>
-            <Header />
-        </div>
-        <div className='main'>
-            <div className='content'>
-                <Content />
-            </div>
-            <div className='sidebar'>
-                <SideBar />
-            </div>
-        </div>
-    </div>
+    // <DefaulLayout />
+    <BrowserRouter>
+        <Routes>
+                    {publicRoutes.map((route, index) => {
+                        let Layout = DefaulLayout
+
+                        if(route.layout)
+                        {
+                            Layout = route.layout
+                        }
+                        else if(route.layout === null)
+                        {
+                            Layout = Fragment
+                        }
+                        const Page = route.component;
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                element={
+                                    <Layout>
+                                        <Page />
+                                    </Layout>
+                                }
+                            />
+                        );
+                    })}
+        </Routes>
+    </BrowserRouter>
   );
 }
 

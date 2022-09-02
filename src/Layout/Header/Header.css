@@ -238,9 +238,27 @@ input:focus-within
     padding-left: 0.5rem;
 }
 
+.menu_icon_profile
+{
+    display: flex;
+    width: 230px;
+    height: 41px;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+
+.menu_icon_profile:hover
+{
+    background: rgb(250, 250, 250);
+}
+
 .menu_icon:hover
 {
     background: rgb(250, 250, 250);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .menu_icon_p
@@ -263,5 +281,6 @@ input:focus-within
 .menu_logout:hover 
 {
     background: rgb(250, 250, 250);
-    border-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

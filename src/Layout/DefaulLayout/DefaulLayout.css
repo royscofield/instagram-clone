@@ -1,0 +1,34 @@
+.header
+{
+    justify-content: center;
+}
+
+body
+{
+    background: rgb(250, 250, 250);
+}
+
+.main
+{
+    margin-left: 251.5px;
+    margin-right: 251.5px;
+    display: flex;
+    padding-top: 2rem;
+    /* justify-content: space-between; */
+    /* background: #333; */
+}
+
+.content
+{
+    min-height: 1000px;
+    width: 470px;
+}
+
+.sidebar
+{
+    /* background: rgb(138, 135, 135); */
+    display: block;
+    width: 319px;
+    margin-left: 32px;
+    max-height: 311px;
+}
