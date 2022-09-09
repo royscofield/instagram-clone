@@ -78,7 +78,24 @@
 {
     width: 258px;
     height: 30px;
-    background: rgb(129, 233, 253);
+    background: rgb(192, 233, 253);
+    font-family: 'Outfit';
+}
+
+.login_top_footer
+{
+    text-align: center;
+}
+
+.login_top_footer > p 
+{
+    font-size: 13px;
+}
+
+.fb
+{
+    color: rgb(61, 85, 136);
+    font-weight: bold;
 }
 
 /* sign in */
@@ -89,6 +106,15 @@
     height: 63px;
     border:  1px solid rgb(230, 230, 230);
     margin: 1rem 0 0 0 ;
+    font-size: 13px;
+    text-align: center;
+}
+
+.sign_up
+{
+    color: rgb(16, 151, 246);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* download app */
@@ -96,4 +122,24 @@
 .login_download
 {
     margin: 1rem 0 0 0;
+    text-align: center;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.download_source
+{
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.app_store
+{
+    /* justify-content: space-between; */
+}
+
+.gg_play
+{
+    /* justify-content: space-between; */
 }
