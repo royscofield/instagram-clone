@@ -1,23 +1,19 @@
 import './Signup.css'
-
-import { initializeApp } from 'firebase/app'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
-import firebaseConfig from '../../firebaseConfig'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { auth } from '../../firebase'
 
 function Signup ()
 {
 
-    // init firebase 
-    const app = initializeApp(firebaseConfig)
-
-    //init firebase auth and get the a reference to the service
-    const auth = getAuth(app)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+
+    //navigate
+    let navigate = useNavigate()
 
     //validate password
     const validatePassword = () =>
@@ -42,7 +38,7 @@ function Signup ()
             createUserWithEmailAndPassword(auth, email, password)
                 .then((res) => {
                     console.log(res.user);
-                    <Link to={'/'} />
+                    navigate('/login')
                 })
                 .catch(err => setError(err.message))
         }
