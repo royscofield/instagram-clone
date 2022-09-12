@@ -1,82 +1,15 @@
-.profile_container
+.profileContainer
 {
     background: rgb(251, 250, 250);
 }
 
-.profile_main
+.profileMain
 {
     margin-left: 251.5px;
     margin-right: 251.5px;
     padding: 2rem 0 0 0 ;
-    /* border: 1px solid; */
-}
-
-/* profile header */
-
-.profile_header
-{
-    display: flex;
-}
-
-.profile_header_right
-{
     display: flex;
     flex-direction: column;
-    margin-left: 7rem;
-    align-items: center;
-}
-.profile_header_right_header
-{
-    display: flex;
     align-items: center;
 }
 
-.edit_profile_btn
-{
-    cursor: pointer;
-    border: 1px solid rgb(219, 219, 219);
-    display: flex;
-    margin: 0 0 0 2rem;
-    width: 94px;
-    height: 30px;
-}
-
-.edit_profile
-{
-    background: transparent;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    width: 94px;
-    height: 30px;
-    font-family: 'Outfit';
-    font-size: 15px;
-}
-
-.profile_header_right_header_icon
-{
-    margin: 0 0 0 2rem;
-    cursor: pointer;
-}
-
-.profile_header_right_detail
-{
-    display: flex;
-    margin-top: 1rem;
-}
-
-.profile_header_right_id
-{
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-.right_detail
-{
-    margin: 0 0 0 2rem;
-}
-
-.profile_line
-{
-    margin-top: 3rem;
-}

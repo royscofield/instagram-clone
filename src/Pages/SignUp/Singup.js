@@ -1,5 +1,6 @@
 import './Signup.css'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth'
+import { useAuthValue } from '../../Auth/AuthContext'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
@@ -11,6 +12,7 @@ function Signup ()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const { setTimeActive } = useAuthValue()
 
     //navigate
     let navigate = useNavigate()
@@ -36,9 +38,14 @@ function Signup ()
         {
             //create user with email and password
             createUserWithEmailAndPassword(auth, email, password)
-                .then((res) => {
-                    console.log(res.user);
-                    navigate('/login')
+                .then(() => {
+                    sendEmailVerification(auth.currentUser)
+                        .then(() =>
+                        {
+                            setTimeActive(true)
+                            navigate('/verify-email')
+                        })
+                        .catch((err) => {alert(err.message)})
                 })
                 .catch(err => setError(err.message))
         }

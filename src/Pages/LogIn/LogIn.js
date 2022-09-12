@@ -1,7 +1,7 @@
 import './Login.css'
 import InstagramLogo from '../../assets/instgram-logo.png'
 
-import {signInWithEmailAndPassword} from 'firebase/auth'
+import {sendEmailVerification, signInWithEmailAndPassword} from 'firebase/auth'
 
 import {auth} from '../../firebase'
 
@@ -15,7 +15,7 @@ import { useState } from 'react'
 function LogIn()
 {
 
-    // const {setTimeActive} = useAuthValue()
+    const {setTimeActive} = useAuthValue()
     
     const navigate = useNavigate()
 
@@ -25,10 +25,22 @@ function LogIn()
 
     const login = e =>
     {
-        e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
-                navigate('/')
+                if(!auth.currentUser.emailVerified) 
+                {
+                    sendEmailVerification(auth.currentUser)
+                        .then(() => 
+                        {
+                            setTimeActive(true)
+                                navigate('/verify-email')
+                        })
+                        .catch(err => alert(err.message))
+                }
+                else
+                {
+                    navigate('/')
+                }
             })
             .catch(err => setError(err.message))
     }
@@ -41,10 +53,22 @@ function LogIn()
                 </div>
                 <div className='login_info'>
                     <div className='login_input'>
-                        <input type={'text'} placeholder='Phone number, username or email address'  className='login_username_input'/>
+                        <input
+                            value={email} 
+                            type={'text'} 
+                            placeholder='Phone number, username or email address'  
+                            className='login_username_input'
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
                     </div>
                     <div className='login_input'>
-                        <input type={'text'} placeholder='Password'  className='login_username_password'/>
+                        <input 
+                            value={password}
+                            type={'text'} 
+                            placeholder='Password'  
+                            className='login_username_password'
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
                     </div>
                     <div className='login_btn'>
                         <input type={'button'} value='Log in' className='login_insta_btn' onClick={login}/>
