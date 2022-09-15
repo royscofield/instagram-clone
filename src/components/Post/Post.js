@@ -1,5 +1,8 @@
 import './Post.css'
-import postPicture from '../../assets/IMG_0925.JPG'
+
+import { useAuthValue } from '../../Auth/AuthContext'
+
+import postPicture from '../../assets/44884218_345707102882519_2446069589734326272_n.jpeg'
 import contentPic from '../../assets/301501022_5359095107540151_9085903540434448165_n.jpeg'
 import contentPic2 from '../../assets/301343292_101440539353543_1811506721654809297_n.jpeg'
 import contentPic3 from '../../assets/302123151_431457285626839_5595447326948725703_n.jpeg'
@@ -10,6 +13,9 @@ import { Box, Carousel, Image } from 'grommet'
 
 function Post ()
 {
+
+    const {currentUser} = useAuthValue() 
+
     return (
         <div className='post_container'>
             <div className='main_post'>
@@ -19,7 +25,7 @@ function Post ()
                             <img alt='post-img' src={postPicture} className={'post_header_pic'}/>
                         </div>
                         <div className='post_account_name'>
-                            <p>giannis_an34</p>
+                            <p>{currentUser?.email}</p>
                         </div>
                     </div>
                     <div className='post_options'>

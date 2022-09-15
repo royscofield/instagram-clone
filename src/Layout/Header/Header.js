@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./Header.css";
-import ProfilePic from '../../assets/IMG_0925.JPG'
+import ProfilePic from '../../assets/44884218_345707102882519_2446069589734326272_n.jpeg'
 
 import Tippy from "@tippyjs/react";
 import 'tippy.js/animations/scale-subtle.css';
 
-import { Link } from 'react-router-dom'
+import { signOut } from 'firebase/auth'
+import {auth} from '../../firebase'
+
+import { Link, useNavigate } from 'react-router-dom'
 
 import Popup from "reactjs-popup";
 
@@ -18,6 +21,8 @@ import { InstagramLogo, DropdownIcon, SearchIcon, HomeIcon, MessageIcon, NewPost
 
 function Header() {
 
+    let naviagate = useNavigate()
+
     const [clickSearch, setClickSearch] = useState(false)
 
     const handleClickSearchBox = () =>
@@ -25,10 +30,11 @@ function Header() {
         setClickSearch(true)
     }
 
-    const handleProfile = () =>
-    {
-        
-    }
+    // const handleLogout = () =>
+    // {
+       
+    //     // alert('123')
+    // }
 
     return (
         <div className="container">
@@ -142,7 +148,7 @@ function Header() {
                             <Wrapper>
                                 <div className="menu_container">
                                         <Link to={'/profile'} style={{textDecoration:"none", color:"#333"}}>
-                                            <div className="menu_icon_profile" onClick={handleProfile}>
+                                            <div className="menu_icon_profile">
                                                 <ProfileIcon />
                                                 <p className="menu_icon_p">Profile</p>
                                             </div>
@@ -167,7 +173,14 @@ function Header() {
                                         <SwitchAccountIcon />
                                         <p className="menu_icon_p">Switch Account</p>
                                     </div>
-                                    <div className="menu_logout">
+
+                                    <div 
+                                        className="menu_logout" 
+                                        onClick={() => 
+                                            { 
+                                                signOut(auth)
+                                                    .then(() => { naviagate('/login') })}}
+                                    >
                                         <p className="menu_logout_txt">Log out</p>
                                     </div>
                                 </div>

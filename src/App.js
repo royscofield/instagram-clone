@@ -6,7 +6,7 @@ import { Fragment, useState, useEffect } from 'react'
 import { AuthProvider } from './Auth/AuthContext'
 import { auth } from './firebase'
 import { onAuthStateChanged } from 'firebase/auth'
-import Profile from './Pages/Profile/Profile';
+// import LogIn from './Pages/LogIn/LogIn';
 
 function App() {
 

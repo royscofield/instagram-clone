@@ -33,7 +33,7 @@ function LogIn()
                         .then(() => 
                         {
                             setTimeActive(true)
-                                navigate('/verify-email')
+                            navigate('/verify-email')
                         })
                         .catch(err => alert(err.message))
                 }
